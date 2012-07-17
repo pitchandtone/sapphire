@@ -118,7 +118,7 @@ There's some best practice configuration we need to apply to FastCGI so that our
   * Look for InstanceMaxRequests and change the value to **10000**
   * Look for ActivityTimeout and change the value to **900**
   * Look for RequestTimeout and change the value to **900**
-  * Click the (Collection) field and press the ... button that appears to the right
+  * Look for Environment Variables, click "(Collection)" and then press the "..." button that appears to the right
   * Click Add when the dialog box appears
   * On the right, enter **PHP_FCGI_MAX_REQUESTS** for the entry to the Name field
   * On the right, enter **10000** for the entry to the Value field
