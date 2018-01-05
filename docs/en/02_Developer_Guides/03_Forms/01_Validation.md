@@ -163,7 +163,16 @@ class Page_Controller extends ContentController
         $check = Member::get()->filter('Email', $data['Email'])->first();
 
         if ($check) {
-            $form->addErrorMessage('Email', 'This email already exists', 'bad');
+            $result = new ValidationResult();
+            $result->addFieldError(
+                'Email',
+                'This email address already exists',
+                ValidationResult::TYPE_ERROR,
+                null,
+                ValidationResult::CAST_TEXT
+            );
+            $form->setSessionValidationResult($result);
+            $form->setSessionData($data);
 
             return $this->redirectBack();
         }
